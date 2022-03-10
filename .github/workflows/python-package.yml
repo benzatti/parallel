@@ -16,6 +16,8 @@ jobs:
     env:
       COVERAGE_SINGLE: 90
       COVERAGE_TOTAL: 90
+      PULL_NUMBER: ${{ github.event.pull_request.number }}
+      COMMIT_URL: "https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }}/commits/${{ github.event.after }}"
     strategy:
       fail-fast: false
       matrix:
@@ -49,6 +51,16 @@ jobs:
         cov-omit-list: 'tests/*, examples/*'
         cov-threshold-single: ${{ env.COVERAGE_SINGLE }}
         cov-threshold-total: ${{ env.COVERAGE_TOTAL }}
+
+    - name: Create comment with pytest coverage table
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        issue-number: ${{env.PULL_NUMBER}}
+        comment-id: ${{ steps.fc.outputs.comment-id }}
+        body: |
+          ## Tests coverage table for [${{ env.SHORT_SHA }}](${{ env.COMMIT_URL }}) commit.
+          ${{ steps.pytester-cov.outputs.output-table }}
+        edit-mode: replace
 
     - name: Coverage single fail - new issue
       if: ${{ steps.pytester-cov.outputs.cov-threshold-single-fail == 'true' }}
