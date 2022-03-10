@@ -38,3 +38,5 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: pytester-cov
+      uses: alexanderdamiani/pytester-cov@v1.2.3
