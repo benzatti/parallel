@@ -1,2 +1,2 @@
-inspect
-asyncio
+coverage
+pytest-cov-3.0.0
