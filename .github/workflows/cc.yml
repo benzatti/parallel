@@ -24,8 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
         pip install pytest-cov
-        pip install nose
-        nosetests --with-coverage --cover-package parallel --cover-xml --cover-xml-file=coverage/reports/coverage1.xml
+        pytest --cov=./ --cov-report=xml
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
       with:
