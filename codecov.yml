@@ -1,0 +1,10 @@
+coverage:
+
+comment:
+  layout: "header, diff"
+  behavior: default  # update if exists else create new
+
+ignore:
+  - tests
+  - examples
+  - setup.py
