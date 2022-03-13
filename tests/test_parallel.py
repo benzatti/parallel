@@ -103,21 +103,11 @@ def test_parallel_invoke_empty_arguments():
         Parallel.invoke()
 
 
-def test_parallel_for_each_with_wrong_type():
+def test_parallel_for_each_with_invalid_arguments():
     with pytest.raises(TypeError):
         Parallel.for_each(None, None)
 
 
-def test_parallel_for_each_with_empty_function():
-    with pytest.raises(TypeError):
-        Parallel.for_each([1, 2, 3], None)
-
-
-def test_parallel_for_range_with_empty_function():
-    with pytest.raises(TypeError):
-        Parallel.for_range(start=0, stop=3, invoke=None)
-
-
-def test_parallel_for_range_with_no_arguments():
+def test_parallel_for_range_with_invalid_arguments():
     with pytest.raises(TypeError):
         Parallel.for_range(None, None, None)
