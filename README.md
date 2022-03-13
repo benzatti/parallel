@@ -2,6 +2,10 @@
 
 This library provides methods to help developers quickly create parallelism in their applications, making it simple to partition work through multiple parallel calls or through parallel 'for' and 'foreach'.
 
+[![Python package](https://github.com/benzatti/parallel/actions/workflows/python-package.yml/badge.svg?branch=main)](https://github.com/benzatti/parallel/actions/workflows/python-package.yml)
+
+[![Code Coverage](https://img.shields.io/codecov/c/github/benzatti/parallel/master?logo=codecov)](https://github.com/benzatti/parallel/actions/workflows/cc.yml)
+
 ## Key Features
 
 - Parallel.invoke: Invokes multiple functions or coroutines in parallel.
