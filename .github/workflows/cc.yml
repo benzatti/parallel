@@ -30,6 +30,10 @@ jobs:
         file: ./coverage.xml
         files: ./tests/coverage/reports/coverage.xml
         directory: ./tests/coverage/reports/
+        ignore:
+          - "./tests/*"
+          - "./examples/*"
+          - "setup.py"
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: true
