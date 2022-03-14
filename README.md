@@ -97,6 +97,11 @@ Processing Item Z
 Elapsed 1.0021614760626107
 ```
 
+## Install
+While Parallel is not yet a package, it can be installed by copying/cloning this repository and running the following: 
+
+    python setup.py install
+
 ## References
 Inspired by C#'s [Parallel library](https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/task-parallel-library-tpl).
 

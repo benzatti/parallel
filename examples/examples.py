@@ -23,20 +23,24 @@ print(f"Elapsed {time.perf_counter() - start_time}")
 
 print("Example 02 - Invoking multiple synchronous functions in parallel.")
 
+
 def operation1():
     print("Starting operation 01")
     time.sleep(3)
     print("Finished operation 01")
+
 
 def operation2():
     print("Starting operation 02")
     time.sleep(2)
     print("Finished operation 02")
 
+
 def operation3():
     print("Starting operation 03")
     time.sleep(1)
     print("Finished operation 03")
+
 
 start_time = time.perf_counter()
 (
@@ -51,6 +55,7 @@ print(f"Elapsed {time.perf_counter() - start_time}")
 # #######################################################################################
 
 print("Example 03 - Invoking multiple asynchronous functions in parallel.")
+
 
 async def download_file(name, duration):
     print(f"Downloading {name} started.")
@@ -85,6 +90,7 @@ print(f"Elapsed {time.perf_counter() - start_time}")
 
 print("Example 05 - Executing a parallel 'for' loop using an asynchronous function.")
 
+
 async def do_some_work(i):
     await asyncio.sleep(1)
     print(f"Item {i}")
@@ -115,6 +121,7 @@ print(f"Elapsed {time.perf_counter() - start_time}")
 # #######################################################################################
 
 print("Example 07 - Executing a parallel 'for each' loop using an asynchronous function.")
+
 
 async def process_item(item):
     await asyncio.sleep(1)
